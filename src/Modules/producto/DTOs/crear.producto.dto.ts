@@ -1,4 +1,4 @@
-import { IsNumber, IsString } from "class-validator";
+import { IsNumber, IsPositive, IsString, ValidateBy } from "class-validator";
 import Producto from "src/Entities/producto.entity";
 
 export default class CrearProductoDTO implements  Partial<Producto>{
@@ -6,6 +6,7 @@ export default class CrearProductoDTO implements  Partial<Producto>{
     nombre: string;
 
     @IsNumber()
+    @IsPositive()
     precio: number;
 
 }

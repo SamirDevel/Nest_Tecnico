@@ -1,6 +1,6 @@
-export default function Catch(callback:()=>any, msj:string){
+export default async function Catch(callback:()=>any, msj:string){
     try {
-        callback();
+        await callback();
         return null;
     } catch (error) {
         console.log(error);
